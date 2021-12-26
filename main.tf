@@ -18,7 +18,7 @@ provider "aws" {
   skip_requesting_account_id  = true
 
   endpoints {
-    ec2 = "http://ec2.localhost.localstack.cloud:4566"
+    ec2 = "https://742a-3-17-133-122.ngrok.io"
   }
 
 }
