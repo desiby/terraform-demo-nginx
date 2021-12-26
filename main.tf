@@ -26,7 +26,7 @@ provider "aws" {
 module "instance-nginx" {
   source             = "app.terraform.io/example-org-0e93fe/instance-nginx/aws"
   version            = "1.0.0"
-  region             = "us-east-1"
+  region             = var.region
   env                = var.env
   vpc_cidr           = "10.0.0.0/16"
   public_subnet_cidr = "10.0.0.0/20"

@@ -12,3 +12,7 @@ variable "aws_secret" {
 variable "aws_key_id" {
   type = string
 }
+
+variable "region" {
+  type = string
+}
