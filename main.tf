@@ -9,7 +9,7 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region                      = "us-east-1"
+  region                      = var.region
   access_key                  = var.aws_key_id
   secret_key                  = var.aws_secret
   s3_force_path_style         = true
@@ -25,13 +25,13 @@ provider "aws" {
 
 module "instance-nginx" {
   source             = "app.terraform.io/example-org-0e93fe/instance-nginx/aws"
-  version            = "1.0.0"
+  version            = "1.0.1"
   region             = var.region
   env                = var.env
   vpc_cidr           = "10.0.0.0/16"
   public_subnet_cidr = "10.0.0.0/20"
   instance_type      = "t3.micro"
   tags = {
-    Name = "my-server-${var.environ}"
+    Name = "my-server-${var.env}"
   }
 }

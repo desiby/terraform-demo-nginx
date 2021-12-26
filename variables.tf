@@ -1,6 +1,3 @@
-variable "environ" {
-  type = string
-}
 
 variable "env" {
   type = string
